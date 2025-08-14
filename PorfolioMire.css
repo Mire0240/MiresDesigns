@@ -1,0 +1,773 @@
+ 
+  /* Program File:	Porfolio 
+      Author:		Mireilys Moreno Gierbolini
+      Date Created:	2023 Mayo 3
+      Purpose:		PORFOLIO WEBSITE
+  */
+
+
+ /* Diseño General */  
+ body {
+            font-family: Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+  /* Diseño del Header */       
+header {
+            background-color: #ED1C7E;
+            color: #fff;
+            text-align: center;
+            font-family:Arial, Helvetica, sans-serif;
+            font-style: italic;
+
+            
+ }
+.HeaderImage img {
+            width: 250px;
+            height: 250px;
+            transition: transform 0.3s ease; 
+}
+.HeaderImage img:hover {
+            transform: scale(1.1);  
+}
+
+h1 {
+            font-size: 36px;
+        }
+
+/* Sección de Inicio */
+
+.carousel {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.carousel input{
+  display: none;
+}
+
+.carousel__items {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+  height: 720px;
+  position: relative;
+}
+
+.carousel__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  transition: opacity 2s;
+  opacity: 0; /* Predeterminado como oculto */
+}
+
+.carousel__item img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  
+}
+
+.carousel__nav {
+  position: absolute;
+  bottom: 3%;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 3;
+  
+}
+
+.carousel__nav > label {
+  border: 1px solid #ED1C7E;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 .125%;
+  width: 20px;
+  height: 20px;
+  background-color: #ED1C7E;
+}
+
+/* Estilo de fondo común para animaciones */
+.animation-default {
+  opacity: 1 !important;
+  z-index: 3;
+}
+
+/* CSS adicional generado según la lógica SCSS, aquí un ejemplo para 5 elementos */
+input[type="radio"]:nth-child(1):checked ~ .carousel__items .carousel__item:nth-child(1),
+input[type="radio"]:nth-child(2):checked ~ .carousel__items .carousel__item:nth-child(2),
+input[type="radio"]:nth-child(3):checked ~ .carousel__items .carousel__item:nth-child(3),
+input[type="radio"]:nth-child(4):checked ~ .carousel__items .carousel__item:nth-child(4),
+input[type="radio"]:nth-child(5):checked ~ .carousel__items .carousel__item:nth-child(5) {
+  opacity: 1; /* Muestra el elemento del carrusel seleccionado */
+}
+
+
+.carousel__indicators {
+  display: none;
+  justify-content: center;
+  list-style: none;
+  
+}
+
+.carousel__indicators li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .carousel__items {
+    height: 300px; /* Altura ajustada para dispositivos móviles */
+  }
+
+  .carousel__item img {
+    width: 100%;
+    height: auto; /* Ajuste para mantener la proporción sin recortar */
+  }
+
+  .carousel__nav > label {
+    width: 15px; /* Etiquetas más pequeñas */
+    height: 15px;
+  }
+
+  .HeaderImage img {
+    width: 100px;
+    height: auto;
+  }
+}
+
+
+
+
+   
+ 
+
+.btn {
+   display: inline-block; /* Permite al botón ser tratado como un bloque pero alinearse como texto. */
+   padding: 10px 20px; /* Añade relleno para hacer el botón más grande y fácil de clicar. */
+   background-color: #ED1C7E; /* Establece un color de fondo naranja. */
+   color: white; /* El texto del botón es blanco. */
+   text-decoration: none; /* Elimina cualquier decoración de texto como subrayados. */
+   font-size: 40px; /* Ajusta el tamaño de la fuente para mejorar la legibilidad. */
+   font-family: Arial, sans-serif; /* Usa Arial como la fuente, con sans-serif como alternativa. */
+   border-radius: 5px; /* Redondea los bordes del botón. */
+   transition: background-color 0.3s, transform 0.3s; /* Añade transiciones suaves para cambios de color de fondo y cursor: pointer; /* Muestra un cursor en forma de mano cuando el usuario pasa el ratón por encima, indicando qu text-align: center; /* Centra el texto dentro del botón. */
+   box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Añade una sombra ligera para un efecto 3D. */
+   margin: 5px; /* Añade un pequeño margen alrededor del botón para evitar que toque otros elementos. */
+   text-align: center;
+   }
+   .btn:hover {
+   background-color: #ED1C7E; /* Oscurece el color de fondo cuando el usuario pasa el ratón por encima para propor transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón para un efecto visual dinámico. */
+   }
+
+ /* Diseño de los contenedores */
+.container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+}
+
+.container1 {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+}
+.container1 img {
+            width: 300px;
+            height:400px;
+
+}
+/*Estilo de Hover images */
+
+
+.container2 {
+  display: -webkit-box;
+  display: flex;
+  width: 100%;
+  padding: 4% 2%;
+  box-sizing: border-box;
+  height: 100vh;
+  
+  }
+
+  .box {
+  -webkit-box-flex: 1;
+  flex: 1;
+  overflow: hidden;
+  -webkit-transition: .5s;
+  transition: .5s;
+  margin: 0 2%;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  line-height: 0;
+  background-color: #F57F20;
+  }
+
+  .box > img {
+  width: 200%;
+  height: calc(100% - 10vh);
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-transition: .5s;
+  transition: .5s;
+  }
+
+  .box > span {
+  font-size: 3.8vh;
+  display: block;
+  text-align: center;
+  height: 10vh;
+  line-height: 2.6;
+  }
+
+  .box:hover {
+  -webkit-box-flex: 1;
+  flex: 1 1 50%;
+  }
+
+  .box:hover > img {
+  width: 100%;
+  height: 100%;
+  }
+
+
+
+ /* Diseño de los porfolios */
+.portfolio-item {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+.portfolio-item img {
+            max-width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+ }
+
+.portfolio-item img:hover {
+            transform: scale(1.1);
+ }
+
+.portfolio-item h2 {
+            font-size: 24px;
+            margin-top: 10px;
+}
+.container img {
+            width: 500px;
+            height: 350px;
+}
+.HeaderB {
+            align-items: center;
+            align-content: center;
+            text-align: center;
+            background-color: #10A84B;
+}
+.button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+            cursor: pointer;
+  }
+
+  .button:hover {
+            background-color:#F57F20;
+            color: #fff;
+  }
+
+  .Button:active {
+            transform: scale(0.95);
+  }
+ /* Diseño del Footer */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  
+  .footer-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+  }
+ 
+  .footer-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-link:hover {
+    color: #ED1C7E;
+  }
+  /* Gallery container */
+  .gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  /* Diseño individual de los 'gallery items' */
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+
+  .gallery-item img {
+    width: 250px;
+    height: 400px;;
+    
+  }
+
+  .gallery-item:hover {
+    transform: scale(1.05);
+  }
+
+  .gallery-container1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  /* Individual gallery items */
+  .gallery-item1 {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+
+  .gallery-item1 img {
+    width: 400px;
+    height: 250px;;
+    
+  }
+
+  .gallery-item1:hover {
+    transform: scale(1.05);
+  }
+   /* Diseño De Back button */
+.prevBtn {
+    display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+            cursor: pointer;
+
+
+}
+.nextBtn {
+    display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+            cursor: pointer;
+
+
+}
+
+ /* Diseño del formulario */
+.cute-form {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 13px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.cute-form h2 {
+  color: #ED1C7E;
+  font-family: 'Arial', sans-serif;
+}
+
+.cute-form label, .cute-form input {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.cute-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#submit {
+  background-color: #ED1C7E;
+  color: #fff;
+  padding: 20px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+h1 { 
+  color: #ED1C7E;
+  font-size: 30px;
+
+}
+h2 { 
+  color: #ED1C7E;
+  font-size: 25px;
+}
+.Greet { 
+  color: #ED1C7E;
+}
+
+.box:link {
+  color: black;
+
+}
+.box:visited {
+  color: black;
+}
+.box:hover {
+  color:black;
+}
+
+ /* Diseño el Back button */
+#backButton {
+  background-color: #10A84B; /* A cute pink */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 20px; /* Rounded corners */
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* A subtle shadow */
+  transition: all 0.3s ease;
+  align-items: center;
+  text-align: center;
+}
+
+#backButton:hover {
+  background-color: #F57F20; /* A slightly darker pink on hover */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+
+.previewable {
+  width: 100px; /* Small size for gallery view */
+  height: auto;
+  cursor: pointer;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* Estilo HP Info */
+.HPInfo {
+  margin: 0 auto;
+  width: 50%; /* Ajusta el ancho según tus necesidades */
+  padding: 40px;
+  background-color: #ffffff; /* Color de fondo del cuadro */
+  border: 1px solid #ddd; /* Borde del cuadro */
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.HPInfo img {
+  width: 400px;
+  height: auto;
+
+}
+
+.HPInfo p {
+  font-size: 20px;
+}
+
+
+h2 {
+  transition: transform 0.2s;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h2:hover {
+  transform: scale(1.05);
+}
+
+p {
+  font-size: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .HPInfo {
+    width: 70%; /* Más ancho en dispositivos más pequeños */
+    padding: 30px; /* Menos padding */
+  }
+
+  p {
+    font-size: 18px; /* Tamaño de fuente ligeramente menor */
+  }
+  .HPInfo img {
+    width: 100%; /* Más ancho en dispositivos más pequeños */
+    height: auto;
+  }
+  
+}
+
+
+@media (max-width: 768px) {
+  .HPInfo {
+    width: 80%; /* Aún más ancho para dispositivos más pequeños */
+    padding: 20px;
+  }
+
+  p {
+    font-size: 16px; /* Tamaño de fuente reducido para mejor legibilidad */
+  }
+
+  h2 {
+    font-size: 24px; /* Reduce el tamaño de fuente para h2 si es necesario */
+  }
+}
+
+@media (max-width: 480px) {
+  .HPInfo {
+    width: 95%; /* Casi todo el ancho de la pantalla */
+    padding: 10px; /* Padding mínimo */
+  }
+
+  p {
+    font-size: 14px; /* Fuente más pequeña para pantallas muy pequeñas */
+  }
+
+  h2 {
+    font-size: 22px; /* Ajusta el tamaño de fuente para los títulos */
+  }
+  h1 {
+    font-size: 25px;
+  }
+}
+
+
+/*Estilo de la muestra de los proyectos */ 
+
+.galeria-centrada {
+  text-align: center;
+  margin: 0 auto;
+  width: 50%; /* Ajusta el ancho según tus necesidades */
+  padding: 40px;
+  background-color: #ffffff; /* Color de fondo del cuadro */
+  
+  transition: transform 0.2s;
+}
+
+.galeria-centrada ul {
+  list-style: none;
+  padding: 0;
+}
+
+.galeria-centrada li {
+  display: inline-block;
+  margin: 20px;
+  position: relative;
+}
+
+.galeria-centrada img {
+  width: 500px; /* Ajusta el tamaño según tus necesidades */
+  height: auto;
+}
+
+.texto-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Hide overlay by default */
+  transition: opacity 0.5s ease;
+}
+
+.galeria-centrada li:hover .texto-hover {
+  opacity: 1;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .galeria-centrada {
+    width: 70%; /* Más ancho en dispositivos más pequeños */
+    padding: 20px; /* Menos padding */
+  }
+
+  .galeria-centrada img {
+    width: 100%; /* Las imágenes ocupan todo el ancho disponible */
+  }
+}
+
+@media (max-width: 768px) {
+  .galeria-centrada {
+    width: 80%; /* Aún más ancho para dispositivos más pequeños */
+  }
+
+  .galeria-centrada img {
+    width: 300px; /* Tamaño más pequeño para las imágenes */
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria-centrada {
+    width: 95%; /* Casi todo el ancho de la pantalla */
+    padding: 10px;
+  }
+
+  .galeria-centrada li {
+    margin: 10px; /* Menos margen entre imágenes */
+  }
+
+  .galeria-centrada img {
+    width: 100%; /* Las imágenes ocupan todo el ancho */
+  }
+}
+
+/*Diseño del Ifram. el Resume */
+
+iframe {
+  width: 100%;
+  height: 600px; /* Altura predeterminada */
+  border: none;
+}
+
+@media (max-width: 768px) {
+iframe {
+      height: 400px; /* Altura reducida para dispositivos móviles */
+  }
+}
+
+@media (max-width: 480px) {
+iframe {
+      height: 300px; /* Altura aún más pequeña para pantallas muy pequeñas */
+  }
+}
+
+/* Estilo del boton de contacto Padina Principal */
+
+#contact-btn {
+  background-color: #ED1C7E;
+  color: #fff;
+  padding: 20px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+/* Estilo de 'Skills' */
+
+.skills-section {
+  background-color:white;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+
+}
+
+.skills-heading h2 {
+  margin-bottom: 20px;
+  display: inline-block;
+  padding-bottom: 5px;
+  font-size: 40px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #c2c0c3;
+}
+
+.skill-name {
+  font-size: 20px;
+  padding: 15px;
+}
+
+.skill-percentage {
+  flex: 1;
+  text-align: right;
+}
+
+.skill-bar {
+  background-color: #ED1C7E;
+  height: 10px;
+  margin-top: 5px;
+  color: #292929;
+}

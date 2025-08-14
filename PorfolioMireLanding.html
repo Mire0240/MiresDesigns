@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+      <!--/* 
+    Program File: Porfolio 
+    Author:	Mireilys Moreno Gierbolini
+    Date Created:2023 
+    Purpose:PORFOLIO WEBSITE 
+    */ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="PorfolioMire.css" rel="stylesheet">
+    <title>Mireilys Portfolio</title>
+    
+</head>
+<body>
+    
+    <header>
+        <!--Imagen del Logo. Tope.-->
+       <div class="HeaderImage"> <img src="Images/MD_logo_1.png"> </div>
+       <h4>MIREILYS DESIGNS</h4>
+   
+        <div class="HeaderB"> 
+            <!--Botones del Header.-->
+            <a href="index.html" class="button">HOME</a>
+            <a href="PorfolioMireG.html" class="button">GRAPHIC</a>
+            <a href="PorfolioMireP.html" class="button">PHOTOGRAPHY</a>
+            <a href="PorfolioMireDEV.html" class="button">WEB</a>
+            <a href="PorfolioMireO.html" class="button">CONTACT</a> 
+        </div>
+    </header>
+
+        <script>
+            // script.js
+
+                document.addEventListener("DOMContentLoaded", function() {
+                var modal = document.getElementById("previewModal");
+                var modalImg = document.getElementById("previewImage");
+                var captionText = document.getElementById("caption");
+                var closeModal = document.getElementById("closeModal");
+
+                // Add click event to images
+                document.querySelectorAll('.previewable').forEach(img => {
+                    img.onclick = function(){
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    captionText.innerHTML = this.alt;
+                    }
+                });
+
+                // Close the modal
+                closeModal.onclick = function() { 
+                    modal.style.display = "none";
+                }
+                });
+
+        </script>
+       
+       
+    
+      
+      <!-- Preview Modal -->
+      <div id="previewModal" class="modal">
+        <span id="closeModal" class="close">&times;</span>
+        <img class="modal-content" id="previewImage">
+        <div id="caption"></div>
+      </div>
+       
+       
+       
+       
+       <div class="galeria-centrada">
+             <ul>
+                 <li>
+                     <img class="previewable" src="images/Landpage.png" alt="Imagen 1">
+                     <span class="texto-hover">Dinamic Landing Page for Auto Part 2024</span>
+                 </li>
+                 <li>
+        </div>
+            <div class="HPInfo">
+                    <h1> Auto Part Landing Page</h1>
+
+                    <p>
+                        He creado una landing page utilizando HTML, CSS y JavaScript, que presenta un diseño
+                        atractivo y funcional. Esta página incluye un formulario de contacto, el cual está codificado
+                        en PHP para gestionar el envío de información. El formulario recoge los datos introducidos 
+                        por el usuario y los envía a una base de datos, asegurando que toda la información se almacene 
+                        de manera segura y organizada. Gracias a la integración de estas tecnologías, la landing page no
+                        solo ofrece una experiencia visual agradable, sino también una interacción fluida y eficiente para 
+                        los usuarios.
+                    </p>
+            <!--Botón de 'Back'-->
+             <script>
+                function goBack() {
+                    window.history.back();
+                }
+              </script>
+             
+             <button id="backButton" onclick="goBack()">BACK</button>
+            </div>
+      
+         
+
+     
+      
+
+   
+
+    <footer>
+        <p class="footer-text">© 2023 More's Designs. All Rights Reserved.</p>
+        <p class="footer-text">Designed with <a href="#" class="footer-link">love</a> by Mireilys Moreno Gierbolini</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+      <!--/* 
+    Program File: Porfolio 
+    Author:	Mireilys Moreno Gierbolini
+    Date Created:2023 
+    Purpose:PORFOLIO WEBSITE 
+    */ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="PorfolioMire.css" rel="stylesheet">
+    <title>Mireilys Portfolio</title>
+    
+</head>
+<body>
+    
+    <header>
+        <!--Imagen del Logo. Tope.-->
+       <div class="HeaderImage"> <img src="Images/MD_logo_1.png"> </div>
+       <h4>MIREILYS DESIGNS</h4>
+   
+        <div class="HeaderB"> 
+            <!--Botones del Header.-->
+            <a href="index.html" class="button">HOME</a>
+            <a href="PorfolioMireG.html" class="button">GRAPHIC</a>
+            <a href="PorfolioMireP.html" class="button">PHOTOGRAPHY</a>
+            <a href="PorfolioMireDEV.html" class="button">WEB</a>
+            <a href="PorfolioMireO.html" class="button">CONTACT</a> 
+        </div>
+    </header>
+
+        <script>
+            // script.js
+
+                document.addEventListener("DOMContentLoaded", function() {
+                var modal = document.getElementById("previewModal");
+                var modalImg = document.getElementById("previewImage");
+                var captionText = document.getElementById("caption");
+                var closeModal = document.getElementById("closeModal");
+
+                // Add click event to images
+                document.querySelectorAll('.previewable').forEach(img => {
+                    img.onclick = function(){
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    captionText.innerHTML = this.alt;
+                    }
+                });
+
+                // Close the modal
+                closeModal.onclick = function() { 
+                    modal.style.display = "none";
+                }
+                });
+
+        </script>
+       
+       
+    
+      
+      <!-- Preview Modal -->
+      <div id="previewModal" class="modal">
+        <span id="closeModal" class="close">&times;</span>
+        <img class="modal-content" id="previewImage">
+        <div id="caption"></div>
+      </div>
+       
+       
+       
+       
+       <div class="galeria-centrada">
+             <ul>
+                 <li>
+                     <img class="previewable" src="images/Xampp.png" alt="Imagen 1">
+                     <span class="texto-hover">Xampp Offline Server Installation 2024</span>
+                 </li>
+                 <li>
+        </div>
+            <div class="HPInfo">
+                    <h1>Bases de Datos / Servidores Offline</h1>
+
+                    <p>
+                        Tengo conocimiento en la instalación y configuración de servidores offline como XAMPP. 
+                        Con esta herramienta, soy capaz de crear bases de datos y gestionar su estructura, 
+                        incluyendo la creación de tablas dentro de estas bases de datos. Esto me permite desarrollar
+                         y probar aplicaciones web en un entorno local antes de implementarlas en un servidor en línea.
+                    </p>
+            <!--Botón de 'Back'-->
+             <script>
+                function goBack() {
+                    window.history.back();
+                }
+              </script>
+             
+             <button id="backButton" onclick="goBack()">BACK</button>
+            </div>
+      
+         
+
+     
+      
+
+   
+
+    <footer>
+        <p class="footer-text">© 2023 More's Designs. All Rights Reserved.</p>
+        <p class="footer-text">Designed with <a href="#" class="footer-link">love</a> by Mireilys Moreno Gierbolini</p>
+    </footer>
+</body>
+</html>

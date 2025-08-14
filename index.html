@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--/* Program File:	Porfolio 
+    Author:		Mireilys Moreno Gierbolini
+    Date Created:	2023 
+    Purpose:		PORFOLIO WEBSITE */ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="PorfolioMire.css" rel="stylesheet">
+    <title>Mireilys Portfolio</title>
+    
+</head>
+<body>
+    
+    <header>
+        <!--Imagen del Logo. Tope.-->
+       <div class="HeaderImage"> <img src="Images/MD_logo_1.png"> </div>
+        <h4>MIREILYS DESIGNS</h4>
+    
+        <div class="HeaderB"> 
+            <!--Botones del Header.-->
+            <a href="index.html" class="button">HOME</a>
+            <a href="PorfolioMireG.html" class="button">GRAPHIC</a>
+            <a href="PorfolioMireP.html" class="button">PHOTOGRAPHY</a>
+            <a href="PorfolioMireDEV.html" class="button">WEB</a>
+            <a href="PorfolioMireO.html" class="button">CONTACT</a>  
+        </div>
+    </header>
+
+    </div>
+   <!--Comienza Inicio.-->
+    <div id="Inicio">
+            <div class="carousel">
+                <input type="radio" id="carousel-1" name="carousel[]" checked>
+                <input type="radio" id="carousel-2" name="carousel[]">
+                 <input type="radio" id="carousel-3" name="carousel[]">
+                <input type="radio" id="carousel-4" name="carousel[]">
+                <input type="radio" id="carousel-5" name="carousel[]">
+                <ul class="carousel__items">
+                    <li class="carousel__item"><img src="Images/mireil__12.jpg" alt=""></li>
+                    <li class="carousel__item"><img src="Images/mireil__13.jpg" alt=""></li>
+                    <li class="carousel__item"><img src="Images/mireil__5.jpg" alt=""></li>
+                    <li class="carousel__item"><img src="Images/mireil__10.jpg" alt=""></li>
+                    <li class="carousel__item"><img src="Images/mireil__8.jpg" alt=""></li>
+                </ul>
+             <div class="carousel__prev">
+                 <label for="carousel-1"></label>
+                 <label for="carousel-2"></label>
+                 <label for="carousel-3"></label>
+                 <label for="carousel-4"></label>
+                 <label for="carousel-5"></label>
+             </div>
+             <div class="carousel__next">
+               <label for="carousel-1"></label>
+               <label for="carousel-2"></label>
+               <label for="carousel-3"></label>
+               <label for="carousel-4"></label>
+               <label for="carousel-5"></label>
+             </div>
+             <div class="carousel__nav">
+               <label for="carousel-1"></label>
+               <label for="carousel-2"></label>
+               <label for="carousel-3"></label>
+               <label for="carousel-4"></label>
+               <label for="carousel-5"></label>
+             </div>
+           </div>
+           
+         
+         <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var inputs = document.querySelectorAll('.carousel input[type="radio"]');
+                var currentIndex = 0;  // Empezamos por el primer input
+            
+                function nextSlide() {
+                    inputs[currentIndex].checked = false;  // Desmarca el radio actual
+                    currentIndex = (currentIndex + 1) % inputs.length;  // Calcula el siguiente índice
+                    inputs[currentIndex].checked = true;  // Marca el siguiente radio
+                }
+            
+                var interval = setInterval(nextSlide, 4000);  // Cambia cada 5 segundos
+            
+                // Para cada input, si el usuario hace clic, reinicia el intervalo
+                inputs.forEach(input => {
+                    input.addEventListener('click', function() {
+                        clearInterval(interval);  // Detiene el intervalo actual
+                        currentIndex = Array.from(inputs).indexOf(input);  // Establece el índice actual al que se hizo clic
+                        interval = setInterval(nextSlide, 5000);  // Inicia el intervalo de nuevo
+                    });
+                });
+            });
+         </script>
+            
+    </div>
+     <!--Termina Inicio.-->   
+        <style>
+                .HPInfo {
+                    margin: 0 auto;
+                    width: 50%; /* Ajusta el ancho según tus necesidades */
+                    padding: 40px;
+                    background-color: #ffffff; /* Color de fondo del cuadro */
+                    border: 1px solid #ddd; /* Borde del cuadro */
+                    text-align: center;
+                    transition: transform 0.2s;
+                }
+                h2:hover {
+                    transform: scale(1.05);;
+                }
+                p {
+                    font-size: 20px;
+                }
+                h2 {
+                    transition: transform 0.2s;
+                }
+              
+         </style>
+    
+       
+        <!-- Informacíon de la página web. (Texto)-->
+        <div class="HPInfo">
+            
+            <h1>Bienvenidos!</h1>
+            <h2>Soy Mireilys Moreno Gierbolini</h2>
+            <h3>Estudiante y Tutora de Atlantic University College en PR.</h3>
+            <img src="Images/Me.jpg">
+
+            <p>
+                Soy Mireilys Moreno Gierbolini, artista gráfica y desarrolladora web, apasionada por
+                 fusionar estética y funcionalidad en el espacio digital. Desde temprana edad, me vi 
+                 fascinada por el arte y la tecnología, lo que me guió hacia una carrera donde la creatividad 
+                 y la innovación van de la mano. Me dedico a crear experiencias digitales intuitivas y accesibles,
+                  buscando siempre superar los límites de la comunicación visual. En mi trabajo, valoro la colaboración
+                   y la inspiración mutua, con el objetivo de aportar belleza y eficiencia al mundo digital.
+            </p>
+        <br>
+      
+            <p>
+                Mi enfoque se centra en la fusión entre diseño gráfico y desarrollo web, buscando 
+                siempre crear experiencias digitales que no solo cuenten historias, sino que también 
+                conecten profundamente con la audiencia. Impulsada por la innovación y la curiosidad, 
+                me dedico a explorar nuevas técnicas y tendencias para enriquecer mis proyectos y anticipar
+                el futuro del diseño web. Con cada proyecto, me esfuerzo por alcanzar la excelencia, combinando 
+                creatividad y tecnología para superar las expectativas y configurar el próximo estándar en la experiencia
+                digital.
+            </p>
+        <br>
+
+            <h2>Certificaciones</h2>
+            <img src="Images/Mireilys Moreno.png"> 
+            <img src="Images/MireilysTutor.png">
+    
+            <p>¿Listo para llevar tu visión a la realidad? 
+                Ponme en contacto y comencemos a crear algo extraordinario juntos.
+                <br> <br>
+            </p>
+            <a href="PorfolioMireO.html" id="contact-btn"> Contáctame</a>
+            
+        </div>
+        
+
+
+
+    <footer>
+        <p class="footer-text">© 2023 More's Designs. All Rights Reserved.</p>
+        <p class="footer-text">Designed with <a href="#" class="footer-link">love</a> by Mireilys Moreno Gierbolini</p>
+    </footer>
+</body>
+</html>

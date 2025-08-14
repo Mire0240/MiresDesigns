@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+     <!--/* 
+    Program File: Porfolio 
+    Author:	Mireilys Moreno Gierbolini
+    Date Created:2023 
+    Purpose:PORFOLIO WEBSITE 
+    */ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="PorfolioMire.css" rel="stylesheet">
+    <title>Mireilys Portfolio</title>
+    
+</head>
+<body>
+    
+    <header>
+       <div class="HeaderImage"> <img src="Images/MD_logo_1.png"> </div>
+        <h4>MIREILYS DESIGNS</h4>
+
+      <div class="HeaderB"> 
+          <a href="index.html" class="button">HOME</a>
+          <a href="PorfolioMireG.html" class="button">GRAPHIC</a>
+          <a href="PorfolioMireP.html" class="button">PHOTOGRAPHY</a>
+          <a href="PorfolioMireDEV.html" class="button">WEB</a>
+          <a href="PorfolioMireO.html" class="button">CONTACT</a>    
+      </div>
+  </header>
+   
+   
+    </head>
+    <body>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+       <div class="container2">
+            <a class="box" href="PorfolioMireColor.html">
+            <img src="Images/Colors_thumb.png">
+           
+            </a>
+            <a class="box" href="PorfolioMirePotraits.html">
+            <img src="Images/Trait_thumb.png">
+           
+            </a>
+            <a class="box" href="PorfolioMireLand.html">
+            <img src="Images/Ture_thumb.png">
+           
+            </a>
+        </div>
+            
+     
+      <script>
+        // JavaScript for a lightbox effect (optional)
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        galleryItems.forEach(item => {
+          item.addEventListener('click', () => {
+            // Open a larger version of the image or perform other actions
+            // You can implement a lightbox or modal here for a more dynamic experience
+            alert('Thank you for visiting!');
+          });
+        });
+    
+      </script>
+
+
+
+
+<div class="HPInfo">
+ <h1>Fotografía</h1> 
+ <br>
+    <div class="skills-section">
+      
+          <h2>Habilidades</h2>
+     
+      <div class="skill">
+          <div class="skill-name">Image Editing</div>
+          <div class="skill-percentage">80%</div>
+          <div class="skill-bar" style="width: 80%;"></div>
+      </div>
+      <div class="skill">
+          <div class="skill-name">Composition</div>
+          <div class="skill-percentage">40%</div>
+          <div class="skill-bar" style="width: 60%;"></div>
+      </div>
+      <div class="skill">
+          <div class="skill-name">Creativity</div>
+          <div class="skill-percentage">70%</div>
+          <div class="skill-bar" style="width: 70%;"></div>
+      </div>
+      <div class="skill">
+          <div class="skill-name">Lighting</div>
+          <div class="skill-percentage">30%</div>
+          <div class="skill-bar" style="width: 30%;"></div>
+      </div>
+    </div>
+
+
+
+    <script>
+      function goBack() {
+          window.history.back();
+      }
+    </script>
+   
+   <button id="backButton" onclick="goBack()">BACK</button>
+
+</div>
+    
+    
+
+    <footer>
+        <p class="footer-text">© 2023 More's Designs. All Rights Reserved.</p>
+        <p class="footer-text">Designed with <a href="#" class="footer-link">love</a> by Mireilys Moreno Gierbolini</p>
+      </footer>
+</body>
+</html>

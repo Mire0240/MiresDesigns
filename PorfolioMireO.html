@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+     <!--/* 
+    Program File: Porfolio 
+    Author:	Mireilys Moreno Gierbolini
+    Date Created:2023 
+    Purpose:PORFOLIO WEBSITE 
+    */ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="PorfolioMire.css" rel="stylesheet">
+    <title>Mireilys Portfolio</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+</head>
+<body>
+    <header>
+        <div class="HeaderImage"> <img src="Images/MD_logo_1.png"> </div>
+        <h4>MIREILYS DESIGNS</h4>
+   
+      <div class="HeaderB"> 
+          <a href="index.html" class="button">HOME</a>
+          <a href="PorfolioMireG.html" class="button">GRAPHIC</a>
+          <a href="PorfolioMireP.html" class="button">PHOTOGRAPHY</a>
+          <a href="PorfolioMireDEV.html" class="button">WEB</a>
+          <a href="PorfolioMireO.html" class="button">CONTACT</a>    
+      </div>
+  </header>
+                                                  
+        <!-- this script is provided by https://www.javascriptfreecode.com coded by: Kerixa Inc. -->
+<style>
+
+  /*Estilo de printing effect */
+  
+    h1 {
+      font-size: 68px;
+      color: #000000;
+      text-align: center;
+    }
+    h1 span.text {
+      padding: 0;
+      padding-right: 4px;
+      border-right: 2px solid #747474;
+      animation: blink 0.75s infinite;
+    }
+    h1 .blue {
+      color: #4480ff;
+    }
+    h1 .green {
+      color: #4caf50;
+    }
+    h1 .yellow {
+      color: #f4b400;
+    }
+    h1 .red {
+      color: #f44336;
+    }
+    
+    p.info {
+      font-size: 12px;
+      margin-top: 6rem;
+      color: #747474;
+    }
+    p.info a {
+      text-decoration: none;
+      color: #4480ff;
+    }
+    
+    @keyframes blink {
+      from {
+        border: none;
+      }
+      to {
+        border-color: 2px solid #747474;
+      }
+    }
+    @media screen and (max-width: 670px) {
+      h1 {
+        font-size: 40px;
+      }
+    
+      img {
+        width: 75px;
+        height: 75px;
+      }
+    }
+    @media screen and (max-width: 400px) {
+      h1 {
+        font-size: 32px;
+      }
+    }
+    </style>
+    <h1>Mire's Designs is <span class="text blue">Good</span></h1>
+    <script>
+    const words = ["Inspiring", "Creative", "Determined", "Great"],
+    colors = ["blue", "green", "yellow", "red"],
+    text = document.querySelector(".text");
+    
+    // Generator (iterate from 0-3)
+    function* generator() {
+      var index = 0;
+      while (true) {
+        yield index++;
+    
+        if (index > 3) {
+          index = 0;
+        }
+      }
+    }
+    
+    // Printing effect
+    function printChar(word) {
+      let i = 0;
+      text.innerHTML = "";
+      text.classList.add(colors[words.indexOf(word)]);
+      let id = setInterval(() => {
+        if (i >= word.length) {
+          deleteChar();
+          clearInterval(id);
+        } else {
+          text.innerHTML += word[i];
+          i++;
+        }
+      }, 500);
+    }
+    
+    // Deleting effect
+    function deleteChar() {
+      let word = text.innerHTML;
+      let i = word.length - 1;
+      let id = setInterval(() => {
+        if (i >= 0) {
+          text.innerHTML = text.innerHTML.substring(0, text.innerHTML.length - 1);
+          i--;
+        } else {
+          text.classList.remove(colors[words.indexOf(word)]);
+          printChar(words[gen.next().value]);
+          clearInterval(id);
+        }
+      }, 300);
+    }
+    
+    // Initializing generator
+    let gen = generator();
+    
+    printChar(words[gen.next().value]);
+    </script>
+     
+      <div class="HPInfo">
+
+           <h2>Contact Me</h2>
+            <form class="cute-form" id="cute-form" method="post">
+                <br>
+                <h3>Nombre</h3> <input type="text" name="nombre" placeholder="Nombre Completo">
+                <span class="error"></span> 
+                <br>
+               <h3>Email:</h3> <input type="text" name="email" placeholder="Correo Electrónico">
+               <span class="error"></span>
+                <br>
+               <h3>Mensaje:</h3><textarea rows="4" cols="30" name="comments" placeholder="¿En qué podemos ayudarte?"></textarea>
+                <br><br>
+                <input type="submit" name="submit" value="submit" id="submit">
+            </form>      
+        </div>
+    
+         
+          <br>
+      <!--Formulario de Contacto-->
+     
+      <br> <br> 
+      </div>
+     
+  
+    <footer>
+        <p class="footer-text">© 2023 More's Designs. All Rights Reserved.</p>
+        <p class="footer-text">Designed with <a href="#" class="footer-link">love</a> by Mireilys Moreno Gierbolini</p>
+    </footer>
+</body>
+</html>
