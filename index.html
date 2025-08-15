@@ -2,162 +2,62 @@
 <html lang="en">
     <!--/* Program File:	Porfolio 
     Author:		Mireilys Moreno Gierbolini
-    Date Created:	2023 
+    Date Created:	2025 
     Purpose:		PORFOLIO WEBSITE */ -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="PorfolioMire.css" rel="stylesheet">
-    <title>Mireilys Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mireilys Gierbolini | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
     
 </head>
 <body>
     
-    <header>
-        <!--Imagen del Logo. Tope.-->
-       <div class="HeaderImage"> <img src="Images/MD_logo_1.png"> </div>
-        <h4>MIREILYS DESIGNS</h4>
-    
-        <div class="HeaderB"> 
-            <!--Botones del Header.-->
-            <a href="index.html" class="button">HOME</a>
-            <a href="PorfolioMireG.html" class="button">GRAPHIC</a>
-            <a href="PorfolioMireP.html" class="button">PHOTOGRAPHY</a>
-            <a href="PorfolioMireDEV.html" class="button">WEB</a>
-            <a href="PorfolioMireO.html" class="button">CONTACT</a>  
+  <!--Header Section Sart-->
+  <header>
+    <nav class="navbar">
+      <img src="Assets/Images/MD_logo.png" alt="Logo" class="main-logo">
+      <ul class="nav-links">
+        <li><a href="Sections/porfolio.html">Porfolio</a></li>
+        <li><a href="Sections/aboutme.html">About Me</a></li>
+        <li><a href="Sections/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!--Header Section End-->
+
+     <!-- Hero Section with Carousel Start-->
+    <section class="relative overflow-hidden h-screen">
+      <div id="carousel" class="carousel relative h-full w-full">
+        <div class="carousel-slide absolute inset-0 w-full h-full opacity-100 transition-opacity duration-1000">
+          <img src="Assets/Images/ArkitectT.png" alt="Slide 1" class="w-full h-full object-cover">
         </div>
-    </header>
-
-    </div>
-   <!--Comienza Inicio.-->
-    <div id="Inicio">
-            <div class="carousel">
-                <input type="radio" id="carousel-1" name="carousel[]" checked>
-                <input type="radio" id="carousel-2" name="carousel[]">
-                 <input type="radio" id="carousel-3" name="carousel[]">
-                <input type="radio" id="carousel-4" name="carousel[]">
-                <input type="radio" id="carousel-5" name="carousel[]">
-                <ul class="carousel__items">
-                    <li class="carousel__item"><img src="Images/mireil__12.jpg" alt=""></li>
-                    <li class="carousel__item"><img src="Images/mireil__13.jpg" alt=""></li>
-                    <li class="carousel__item"><img src="Images/mireil__5.jpg" alt=""></li>
-                    <li class="carousel__item"><img src="Images/mireil__10.jpg" alt=""></li>
-                    <li class="carousel__item"><img src="Images/mireil__8.jpg" alt=""></li>
-                </ul>
-             <div class="carousel__prev">
-                 <label for="carousel-1"></label>
-                 <label for="carousel-2"></label>
-                 <label for="carousel-3"></label>
-                 <label for="carousel-4"></label>
-                 <label for="carousel-5"></label>
-             </div>
-             <div class="carousel__next">
-               <label for="carousel-1"></label>
-               <label for="carousel-2"></label>
-               <label for="carousel-3"></label>
-               <label for="carousel-4"></label>
-               <label for="carousel-5"></label>
-             </div>
-             <div class="carousel__nav">
-               <label for="carousel-1"></label>
-               <label for="carousel-2"></label>
-               <label for="carousel-3"></label>
-               <label for="carousel-4"></label>
-               <label for="carousel-5"></label>
-             </div>
-           </div>
-           
-         
-         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var inputs = document.querySelectorAll('.carousel input[type="radio"]');
-                var currentIndex = 0;  // Empezamos por el primer input
-            
-                function nextSlide() {
-                    inputs[currentIndex].checked = false;  // Desmarca el radio actual
-                    currentIndex = (currentIndex + 1) % inputs.length;  // Calcula el siguiente índice
-                    inputs[currentIndex].checked = true;  // Marca el siguiente radio
-                }
-            
-                var interval = setInterval(nextSlide, 4000);  // Cambia cada 5 segundos
-            
-                // Para cada input, si el usuario hace clic, reinicia el intervalo
-                inputs.forEach(input => {
-                    input.addEventListener('click', function() {
-                        clearInterval(interval);  // Detiene el intervalo actual
-                        currentIndex = Array.from(inputs).indexOf(input);  // Establece el índice actual al que se hizo clic
-                        interval = setInterval(nextSlide, 5000);  // Inicia el intervalo de nuevo
-                    });
-                });
-            });
-         </script>
-            
-    </div>
-     <!--Termina Inicio.-->   
-        <style>
-                .HPInfo {
-                    margin: 0 auto;
-                    width: 50%; /* Ajusta el ancho según tus necesidades */
-                    padding: 40px;
-                    background-color: #ffffff; /* Color de fondo del cuadro */
-                    border: 1px solid #ddd; /* Borde del cuadro */
-                    text-align: center;
-                    transition: transform 0.2s;
-                }
-                h2:hover {
-                    transform: scale(1.05);;
-                }
-                p {
-                    font-size: 20px;
-                }
-                h2 {
-                    transition: transform 0.2s;
-                }
-              
-         </style>
-    
-       
-        <!-- Informacíon de la página web. (Texto)-->
-        <div class="HPInfo">
-            
-            <h1>Bienvenidos!</h1>
-            <h2>Soy Mireilys Moreno Gierbolini</h2>
-            <h3>Estudiante y Tutora de Atlantic University College en PR.</h3>
-            <img src="Images/Me.jpg">
-
-            <p>
-                Soy Mireilys Moreno Gierbolini, artista gráfica y desarrolladora web, apasionada por
-                 fusionar estética y funcionalidad en el espacio digital. Desde temprana edad, me vi 
-                 fascinada por el arte y la tecnología, lo que me guió hacia una carrera donde la creatividad 
-                 y la innovación van de la mano. Me dedico a crear experiencias digitales intuitivas y accesibles,
-                  buscando siempre superar los límites de la comunicación visual. En mi trabajo, valoro la colaboración
-                   y la inspiración mutua, con el objetivo de aportar belleza y eficiencia al mundo digital.
-            </p>
-        <br>
-      
-            <p>
-                Mi enfoque se centra en la fusión entre diseño gráfico y desarrollo web, buscando 
-                siempre crear experiencias digitales que no solo cuenten historias, sino que también 
-                conecten profundamente con la audiencia. Impulsada por la innovación y la curiosidad, 
-                me dedico a explorar nuevas técnicas y tendencias para enriquecer mis proyectos y anticipar
-                el futuro del diseño web. Con cada proyecto, me esfuerzo por alcanzar la excelencia, combinando 
-                creatividad y tecnología para superar las expectativas y configurar el próximo estándar en la experiencia
-                digital.
-            </p>
-        <br>
-
-            <h2>Certificaciones</h2>
-            <img src="Images/Mireilys Moreno.png"> 
-            <img src="Images/MireilysTutor.png">
-    
-            <p>¿Listo para llevar tu visión a la realidad? 
-                Ponme en contacto y comencemos a crear algo extraordinario juntos.
-                <br> <br>
-            </p>
-            <a href="PorfolioMireO.html" id="contact-btn"> Contáctame</a>
-            
+        <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+          <img src="Assets/Images/mireilys_porfolio_1.jpg" alt="Slide 2" class="w-full h-full object-cover">
         </div>
-        
+        <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+          <img src="Assets/Images/web.png" alt="Slide 3" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Overlay Content -->
+        <div class="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center text-center text-white z-10">
+          <h1>Welcome</h1>
+          <div>
+            <h2>Mire's Designs</h2>
+            <p class="mt-4 text-lg">Full Stack Developer | Graphic Designer | UI/UX Designer</p>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button id="prevSlide" class="absolute left-5 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full z-20">&#10094;</button>
+        <button id="nextSlide" class="absolute right-5 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full z-20">&#10095;</button>
+      </div>
+    </section>
+    <!-- Hero Section with Carousel End -->
 
 
 
@@ -165,5 +65,35 @@
         <p class="footer-text">© 2023 More's Designs. All Rights Reserved.</p>
         <p class="footer-text">Designed with <a href="#" class="footer-link">love</a> by Mireilys Moreno Gierbolini</p>
     </footer>
+  <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let slides = document.querySelectorAll(".carousel-slide");
+            let currentSlide = 0;
+            let totalSlides = slides.length;
+    
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.style.opacity = i === index ? "1" : "0";
+                });
+            }
+    
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            }
+    
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                showSlide(currentSlide);
+            }
+    
+            document.getElementById("nextSlide").addEventListener("click", nextSlide);
+            document.getElementById("prevSlide").addEventListener("click", prevSlide);
+    
+            // Auto slide every 5 seconds
+            setInterval(nextSlide, 5000);
+        });
+    </script>
+
 </body>
 </html>

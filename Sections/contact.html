@@ -7,28 +7,30 @@
     Purpose:PORFOLIO WEBSITE 
     */ -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="PorfolioMire.css" rel="stylesheet">
-    <title>Mireilys Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mireilys Gierbolini | Portfolio</title>
+  <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  
 </head>
 <body>
-    <header>
-        <div class="HeaderImage"> <img src="Images/MD_logo_1.png"> </div>
-        <h4>MIREILYS DESIGNS</h4>
-   
-      <div class="HeaderB"> 
-          <a href="index.html" class="button">HOME</a>
-          <a href="PorfolioMireG.html" class="button">GRAPHIC</a>
-          <a href="PorfolioMireP.html" class="button">PHOTOGRAPHY</a>
-          <a href="PorfolioMireDEV.html" class="button">WEB</a>
-          <a href="PorfolioMireO.html" class="button">CONTACT</a>    
-      </div>
+      <!--Header Section Sart-->
+
+  <header>
+    <nav class="navbar">
+      <a href="../index.html"><img src="../Assets/Images/MD_logo.png" alt="Logo" class="main-logo"></a>
+      <ul class="nav-links">
+        <li><a href="../Sections/porfolio.html">Porfolio</a></li>
+        <li><a href="../Sections/aboutme.html">About Me</a></li>
+        <li><a href="../Sections/contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
+
+  <!--Header Section End-->
                                                   
         <!-- this script is provided by https://www.javascriptfreecode.com coded by: Kerixa Inc. -->
 <style>
@@ -149,23 +151,7 @@
     printChar(words[gen.next().value]);
     </script>
      
-      <div class="HPInfo">
-
-           <h2>Contact Me</h2>
-            <form class="cute-form" id="cute-form" method="post">
-                <br>
-                <h3>Nombre</h3> <input type="text" name="nombre" placeholder="Nombre Completo">
-                <span class="error"></span> 
-                <br>
-               <h3>Email:</h3> <input type="text" name="email" placeholder="Correo Electrónico">
-               <span class="error"></span>
-                <br>
-               <h3>Mensaje:</h3><textarea rows="4" cols="30" name="comments" placeholder="¿En qué podemos ayudarte?"></textarea>
-                <br><br>
-                <input type="submit" name="submit" value="submit" id="submit">
-            </form>      
-        </div>
-    
+      
          
           <br>
       <!--Formulario de Contacto-->
