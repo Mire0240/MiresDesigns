@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery | Mireilys Gierbolini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/images/MD_logo.png">
+  <style>
+    :root {
+      --bg: #fff;
+      --ink: #111;
+      --muted: #666;
+      --gap: 16px;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid #eee;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: var(--ink);
+    }
+    .brand img { width: 36px; height: 36px; }
+    .brand span { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.5px; font-size: 1.2rem; }
+
+    .back {
+      text-decoration: none;
+      font-weight: 700;
+      border: 2px solid var(--ink);
+      padding: 8px 14px;
+      border-radius: 999px;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+      color: #fff; background: var(--ink);
+    }
+    .back:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(0,0,0,.18); }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 20px 50px;
+    }
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      margin: 0 0 6px;
+      letter-spacing: 0.5px;
+    }
+    .sub { color: var(--muted); margin: 0 0 24px; }
+
+    /* Masonry-like responsive grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: var(--gap);
+    }
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #f5f5f5;
+      cursor: zoom-in;
+    }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s ease;
+    }
+    .card:hover img { transform: scale(1.03); }
+
+    .caption {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      padding: 10px 12px;
+      font-size: .9rem;
+      color: #fff;
+      background: linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,0));
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,.8);
+      z-index: 1000;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 86vh;
+      border-radius: 12px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.45);
+    }
+    .lb-close, .lb-prev, .lb-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(17,17,17,.9);
+      color: #fff;
+      border: 0;
+      border-radius: 999px;
+      width: 42px; height: 42px;
+      display: grid; place-items: center;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .lb-close { top: 8%; right: 4%; transform: none; }
+    .lb-prev { left: 2%; }
+    .lb-next { right: 2%; }
+    .lb-close:hover, .lb-prev:hover, .lb-next:hover { background: #111; }
+
+    @media (max-width: 540px) {
+      .card img { height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="brand">
+      <img src="assets/images/MD_logo.png" alt="Logo">
+      <span>Mireilys Gierbolini</span>
+    </a>
+    <a class="back" href="index.html">← Back to Home</a>
+  </header>
+
+  <main class="page">
+    <h1>Gallery</h1>
+    <p class="sub">A broader look at my design and web work.</p>
+
+    <section class="grid" id="gallery">
+      <!-- Replace with your real pieces -->
+      <figure class="card">
+        <img src="assets/images/HomenajeRevolu.png" alt="Homenaje Revolu Poster">
+        <figcaption class="caption">Homenaje Revolu — Poster</figcaption>
+      </figure>
+
+     <figure class="card">
+        <img src="assets/images/HomenajeDECO.jpg" alt="Balloon shoot">
+        <figcaption class="caption">Art DECO — Poster</figcaption>
+      </figure>
+       <figure class="card">
+        <img src="assets/images/PROMOT.png" alt="Promotional graphic">
+        <figcaption class="caption">Promotional Graphic</figcaption>
+      </figure>
+
+         <figure class="card">
+        <img src="assets/images/ArkitectCatalog.png" alt="Promotional graphic">
+        <figcaption class="caption">Promotional Catalog</figcaption>
+      </figure>
+    
+      <figure class="card">
+        <img src="assets/images/mireilys_bicycle.jpg" alt="Lifestyle bicycle photo composition">
+        <figcaption class="caption">Lifestyle Bicycle — Photo</figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/images/mireil__Ballon.jpg" alt="Balloon shoot">
+        <figcaption class="caption">Balloon Shoot — Photo</figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="assets/images/mireil__pinkleafs.jpg" alt="">
+        <figcaption class="caption">Nature's Colors— Photo</figcaption>
+      </figure>
+
+     <figure class="card">
+        <img src="assets/images/mireilys_book.jpg" alt="">
+        <figcaption class="caption">Life's Book — Photo</figcaption>
+      </figure>
+    <figure class="card">
+        <img src="assets/images/mireil__13.jpg" alt="">
+        <figcaption class="caption">Dandi's — Photo</figcaption>
+      </figure>
+
+    <figure class="card">
+        <img src="assets/images/VolantWeb.png" alt="">
+        <figcaption class="caption">Volant Caguas — Website</figcaption>
+    </figure>
+
+    <figure class="card">
+        <img src="assets/images/ABAWeb.png" alt="">
+        <figcaption class="caption">All Brand Auto — Website</figcaption>
+    </figure>
+
+   <figure class="card">
+        <img src="assets/images/AngeloWeb.png" alt="">
+        <figcaption class="caption">Portfolio — Website</figcaption>
+    </figure>
+    
+    </section>
+  </main>
+
+  <!-- Lightweight lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" aria-label="Close">✕</button>
+    <button class="lb-prev" aria-label="Previous">‹</button>
+    <img alt="">
+    <button class="lb-next" aria-label="Next">›</button>
+  </div>
+
+  <script>
+    (function(){
+      const cards = Array.from(document.querySelectorAll('.card img'));
+      const lb = document.getElementById('lightbox');
+      const lbImg = lb.querySelector('img');
+      const btnClose = lb.querySelector('.lb-close');
+      const btnPrev = lb.querySelector('.lb-prev');
+      const btnNext = lb.querySelector('.lb-next');
+      let idx = -1;
+
+      function open(i){
+        idx = i;
+        lbImg.src = cards[idx].src;
+        lbImg.alt = cards[idx].alt;
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function close(){
+        lb.classList.remove('open');
+        lb.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+      function prev(){ open((idx - 1 + cards.length) % cards.length); }
+      function next(){ open((idx + 1) % cards.length); }
+
+      cards.forEach((img, i) => {
+        img.addEventListener('click', () => open(i));
+        img.addEventListener('keydown', (e) => { if (e.key === 'Enter') open(i); });
+        img.tabIndex = 0; // make focusable
+        img.style.outline = 'none';
+      });
+
+      btnClose.addEventListener('click', close);
+      btnPrev.addEventListener('click', prev);
+      btnNext.addEventListener('click', next);
+      lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+      document.addEventListener('keydown', (e) => {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') prev();
+        if (e.key === 'ArrowRight') next();
+      });
+    })();
+  </script>
+</body>
+</html>

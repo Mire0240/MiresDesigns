@@ -1,99 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!--/* Program File:	Porfolio 
-    Author:		Mireilys Moreno Gierbolini
-    Date Created:	2025 
-    Purpose:		PORFOLIO WEBSITE */ -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mireilys Gierbolini | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="main.css" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
-<script src="https://cdn.tailwindcss.com"></script>
-    
+  
 </head>
 <body>
-    
   <!--Header Section Sart-->
-  <header>
+  <header class="hero">
     <nav class="navbar">
-      <img src="Assets/Images/MD_logo.png" alt="Logo" class="main-logo">
+      <img src="assets/images/MD_logo.png" alt="Logo" class="main-logo">
       <ul class="nav-links">
-        <li><a href="Sections/porfolio.html">Porfolio</a></li>
-        <li><a href="Sections/aboutme.html">About Me</a></li>
-        <li><a href="Sections/contact.html">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
   <!--Header Section End-->
+<!-- Fade Carousel Section Start -->
+<section class="fade-carousel" data-ratio="16/9">
+  <div class="carousel-track">
+    <div class="carousel-card active">
+      <img src="assets/images/mireilys_bicycle.jpg" alt="Slide 1" />
+    </div>
+    <div class="carousel-card">
+      <img src="assets/images/mireil__Ballon.jpg" alt="Slide 2" />
+    </div>
+    <div class="carousel-card">
+      <img src="assets/images/PROMOT.png" alt="Slide 3" />
+    </div>
+  </div>
+</section>
+<!-- Fade Carousel Section End -->
 
-     <!-- Hero Section with Carousel Start-->
-    <section class="relative overflow-hidden h-screen">
-      <div id="carousel" class="carousel relative h-full w-full">
-        <div class="carousel-slide absolute inset-0 w-full h-full opacity-100 transition-opacity duration-1000">
-          <img src="Assets/Images/ArkitectT.png" alt="Slide 1" class="w-full h-full object-cover">
-        </div>
-        <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-          <img src="Assets/Images/mireilys_porfolio_1.jpg" alt="Slide 2" class="w-full h-full object-cover">
-        </div>
-        <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
-          <img src="Assets/Images/web.png" alt="Slide 3" class="w-full h-full object-cover">
-        </div>
+<style>
+  .fade-carousel {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    /* Keeps height without JS. Change via data-ratio if you want */
+  }
+  .fade-carousel .carousel-track {
+    position: relative;
+    width: 100%;
+    /* Use aspect-ratio to avoid 0-height when children are absolute */
+    aspect-ratio: 16 / 9;
+  }
+  /* If you want to control the ratio from HTML: data-ratio="4/3", etc. */
+  .fade-carousel[data-ratio="4/3"] .carousel-track { aspect-ratio: 4/3; }
+  .fade-carousel[data-ratio="1/1"] .carousel-track { aspect-ratio: 1/1; }
+  .fade-carousel[data-ratio="21/9"] .carousel-track { aspect-ratio: 21/9; }
 
-        <!-- Overlay Content -->
-        <div class="absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center text-center text-white z-10">
-          <h1>Welcome</h1>
-          <div>
-            <h2>Mire's Designs</h2>
-            <p class="mt-4 text-lg">Full Stack Developer | Graphic Designer | UI/UX Designer</p>
-          </div>
-        </div>
+  .fade-carousel .carousel-card {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 900ms ease-in-out, visibility 0s linear 900ms;
+    pointer-events: none;
+  }
+  .fade-carousel .carousel-card.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 900ms ease-in-out, visibility 0s;
+    pointer-events: auto;
+    z-index: 1;
+  }
+  .fade-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 16px;
+  }
+  .intro-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
 
-        <!-- Navigation Buttons -->
-        <button id="prevSlide" class="absolute left-5 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full z-20">&#10094;</button>
-        <button id="nextSlide" class="absolute right-5 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full z-20">&#10095;</button>
-      </div>
-    </section>
-    <!-- Hero Section with Carousel End -->
+  .intro-image img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* circular mask */
+    object-fit: cover;
+    object-position: center top;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid #111;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+    margin-top: 0.75rem;
+  }
+  .btn-primary {
+    background: #111;
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,0,0,0.2); }
+  .btn-primary:active { transform: translateY(0); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
 
+  .pdf-container {
+    width: 50%;
+    max-width: 900px;
+    margin: 14px auto 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  }
+  .pdf-frame {
+    display: block;
+    width: 100%;
+    height: min(78vh, 900px); /* responsive height */
+    border: 0;
+    background: #f5f5f5;
+  }
 
+  @media (max-width: 600px) {
+    .pdf-frame { height: 70vh; }
+  }
 
-    <footer>
-        <p class="footer-text">© 2023 More's Designs. All Rights Reserved.</p>
-        <p class="footer-text">Designed with <a href="#" class="footer-link">love</a> by Mireilys Moreno Gierbolini</p>
-    </footer>
-  <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let slides = document.querySelectorAll(".carousel-slide");
-            let currentSlide = 0;
-            let totalSlides = slides.length;
-    
-            function showSlide(index) {
-                slides.forEach((slide, i) => {
-                    slide.style.opacity = i === index ? "1" : "0";
-                });
-            }
-    
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                showSlide(currentSlide);
-            }
-    
-            function prevSlide() {
-                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                showSlide(currentSlide);
-            }
-    
-            document.getElementById("nextSlide").addEventListener("click", nextSlide);
-            document.getElementById("prevSlide").addEventListener("click", prevSlide);
-    
-            // Auto slide every 5 seconds
-            setInterval(nextSlide, 5000);
+  .resume-preview { max-width: 900px; margin: 14px auto 0; }
+  .pdf-canvas { width: 50%; height: auto; display: block; border-radius: 12px; box-shadow: 0 8px 22px rgba(0,0,0,0.12); background:#f5f5f5; }
+  .resume-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+  .resume-actions .btn { margin-top: 0; }
+
+  .contact-links {
+    margin-top: 1rem;
+    text-align: left;
+  }
+  .contact-links a {
+    color: #111;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .contact-links a:hover {
+    color: #555;
+  }
+  .contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #111;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .contact-item:hover {
+    color: #555;
+  }
+  .contact-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(0%) brightness(0%) contrast(100%);
+    transition: filter 0.2s ease;
+  }
+  .contact-item:hover .contact-icon {
+    filter: invert(40%) brightness(60%) contrast(90%);
+  }
+</style>
+
+<script>
+  // Robust initializer (works even if this <script> is in <head>)
+  document.addEventListener('DOMContentLoaded', () => {
+    const CAROUSEL_SELECTOR = '.fade-carousel';
+    const INTERVAL_MS = 3000; // change slide every 3s
+
+    document.querySelectorAll(CAROUSEL_SELECTOR).forEach(setupCarousel);
+
+    function setupCarousel(root) {
+      const slides = Array.from(root.querySelectorAll('.carousel-card'));
+      if (slides.length < 2) {
+        // Ensure at least the first is visible
+        if (slides[0]) slides[0].classList.add('active');
+        return;
+      }
+
+      // Guarantee one active slide at start
+      if (!slides.some(s => s.classList.contains('active'))) {
+        slides[0].classList.add('active');
+      }
+
+      let index = slides.findIndex(s => s.classList.contains('active'));
+      if (index < 0) index = 0;
+
+      let timer = null;
+
+      const next = () => {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+      };
+
+      const start = () => { stop(); timer = setInterval(next, INTERVAL_MS); };
+      const stop  = () => { if (timer) { clearInterval(timer); timer = null; } };
+
+      // Pause on hover
+      root.addEventListener('mouseenter', stop);
+      root.addEventListener('mouseleave', start);
+
+      // Pause when the tab is hidden (saves CPU/battery)
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stop(); else start();
+      });
+
+      // Kick it off
+      start();
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Lightweight PDF first-page preview using PDF.js (progressive enhancement)
+    const canvas = document.getElementById('resumeCanvas');
+    const iframe = document.querySelector('.pdf-frame');
+    const pdfUrl = 'assets/Files/Resume%20Programer.pdf';
+    if (!canvas) return;
+
+    // Load PDF.js dynamically
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js';
+    script.onload = () => {
+      const pdfjsLib = window['pdfjs-dist/build/pdf'];
+      if (!pdfjsLib) return;
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
+
+      pdfjsLib.getDocument(pdfUrl).promise
+        .then(pdf => pdf.getPage(1))
+        .then(page => {
+          const scale = 1.4; // adjust preview size
+          const viewport = page.getViewport({ scale });
+          const ctx = canvas.getContext('2d');
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          return page.render({ canvasContext: ctx, viewport }).promise;
+        })
+        .then(() => {
+          // Hide iframe fallback when canvas rendered successfully
+          if (iframe) iframe.style.display = 'none';
+        })
+        .catch(err => {
+          console.warn('PDF preview failed, keeping iframe fallback.', err);
         });
-    </script>
+    };
+    script.onerror = () => {
+      console.warn('Could not load PDF.js, keeping iframe fallback.');
+    };
+    document.head.appendChild(script);
+  });
+</script>
 
+<!-- Intro Section Start-->
+<section class="intro">
+  <h1 class="intro-title">Mireilys Moreno Gierbolini</h1>
+  <div class="intro-image">
+    <img src="assets/images/PersonalPic.JPG" alt="Mireilys Moreno Gierbolini portrait" />
+  </div>
+  <p class="intro-subtitle">Graphic Designer | Web Developer</p>
+
+
+</section>
+  <!-- Intro Section End-->
+
+  <main>
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>Hello! I’m Mireilys, a passionate designer and developer who loves combining design and programming to create unique, meaningful, and visually engaging websites. My work blends Bauhaus-inspired aesthetics with modern code to craft experiences that stand out and connect with people.</p>
+    </section>
+
+    <section id="portfolio" class="section">
+      <h2>Portfolio</h2>
+      <p>A selection of my best design and web projects.</p>
+      <p>
+        <a class="btn btn-primary" href="gallery.html" aria-label="View the full gallery of Mireilys' work">View Full Gallery</a>
+      </p>
+    </section>
+
+    <section id="resume" class="section">
+    <h2>Resume / CV</h2>
+    <p>Preview my resume below or download a copy.</p>
+
+    <div class="resume-preview">
+      <canvas id="resumeCanvas" class="pdf-canvas" aria-label="Resume first page preview"></canvas>
+      <div class="resume-actions">
+        <a class="btn btn-primary" href="assets/Files/Resume%20Programer.pdf" target="_blank" rel="noopener" aria-label="Open full resume PDF in a new tab">Open Full PDF</a>
+      </div>
+    </div>
+
+    <div class="pdf-container">
+      <iframe
+        class="pdf-frame"
+        src="assets/Files/Resume%20Programer.pdf#view=FitH"
+        title="Resume Preview"
+      ></iframe>
+    </div>
+
+ 
+  </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Let’s connect! Email me or reach out through my socials.</p>
+      <div class="contact-links">
+    <p>
+      <a href="mailto:silierim1130@gmail.com" class="contact-item">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="Email icon" class="contact-icon" />
+        <span>silierim1130@gmail.com</span>
+      </a>
+    </p>
+    <p>
+      <a href="https://www.instagram.com/mires_designs" target="_blank" rel="noopener" class="contact-item">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram icon" class="contact-icon" />
+        <span>@mires_designs</span>
+      </a>
+    </p>
+  </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mireilys Gierbolini.</p>
+  </footer>
 </body>
+
 </html>
